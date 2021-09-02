@@ -1,0 +1,166 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
+    <!-- Bootstrap core CSS -->
+    <link
+      href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'
+      rel='stylesheet'
+      integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC'
+      crossorigin='anonymous'
+    />
+    <link
+      rel='stylesheet'
+      type='text/css'
+      href='fonts/font-awesome/font-awesome.min.css'
+    />
+    <link
+      rel='stylesheet'
+      href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css'
+    />
+
+    <title>MY FIRST NODE JS ACTIVITY</title>
+  </head>
+  <body>
+    <!-- Responsive navbar-->
+    <nav class='navbar navbar-expand-lg navbar-dark bg-danger'>
+      <div class='container px-5'>
+        <h4 class='textAll text-light'><span class='me-3'><i
+              class='bi bi-house-door-fill'
+            ></i></span>EDUCasyon Admin Module</h4>
+        <button
+          class='navbar-toggler'
+          type='button'
+          data-bs-toggle='collapse'
+          data-bs-target='#navbarSupportedContent'
+          aria-controls='navbarSupportedContent'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+        ><span class='navbar-toggler-icon'></span></button>
+        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+          <ul class='navbar-nav ms-auto mb-2 mb-lg-0'>
+            <li class='nav-item'><a
+                class='nav-link active'
+                aria-current='page'
+                href='/adminPage'
+              >Home</a></li>
+            <li class='nav-item'><a class='nav-link' href='#!'>View Your Account</a></li>
+            <li class='nav-item'><a class='nav-link' href='#!'>SIS Policy and
+                Guidelines</a></li>
+            <li class='nav-item'><a class='nav-link' href='/'>Log-Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--CONTENTS-->
+    <section class='p-3 p-lg-0 pt-lg-5 mb-4'>
+      <div class='container mt-2'>
+        <h2 class='text-danger'>Update Student Record</h2>
+        {{#if message}}
+          <h4 class='alert alert-danger mt-4'>{{message}}</h4>
+        {{/if}}
+        <div class='card'>
+          <div class='card-header fw-bold'>Update Form</div>
+          <div class='card-body'>
+            <form action='/auth/updateStudent' method='POST'>
+              <div class='form-group'>
+                <label>Firstname:</label>
+                <input
+                  type='text'
+                  class='form-control'
+                  id='firstname'
+                  name='firstname'
+                  value='{{user.firstname}}'
+                />
+              </div>
+              <div class='form-group'>
+                <label>Middlename:</label>
+                <input
+                  type='text'
+                  class='form-control'
+                  id='middlename'
+                  name='middlename'
+                  value='{{user.middlename}}'
+                />
+              </div>
+              <div class='form-group'>
+                <label>Lastname:</label>
+                <input
+                  type='text'
+                  class='form-control'
+                  id='lastname'
+                  name='lastname'
+                  value='{{user.lastname}}'
+                />
+              </div>
+              <div class='form-group'>
+                <label>Address:</label>
+                <input
+                  type='text'
+                  class='form-control'
+                  id='address'
+                  name='address'
+                  value='{{user.address}}'
+                />
+              </div>
+              <div class='form-group'>
+                <label>Contact No.:</label>
+                <input
+                  type='text'
+                  class='form-control'
+                  id='contactNum'
+                  name='contactNum'
+                  value='{{user.contact_no}}'
+                />
+              </div>
+              <div class='form-group'>
+                <label>Email Address:</label>
+                <input
+                  type='email'
+                  class='form-control'
+                  id='emailAdd'
+                  name='emailAdd'
+                  value='{{user.email}}'
+                />
+              </div>
+
+              <div class='form-group'>
+                <label>Username:</label>
+                <input
+                  type='text'
+                  class='form-control'
+                  name='username'
+                  id='username'
+                  value='{{user.username}}'
+                />
+              </div>
+              <div
+                class='d-flex justify-content-md-end justify-content-sm-center'
+              >
+                <button type='submit' class='btn btn-secondary'>UPDATE</button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Footer-->
+    <footer class='py-5 bg-danger'>
+      <div class='container px-4 px-lg-5'><p
+          class='m-0 text-center text-white'
+        >Copyright &copy; EDUCasyon 2021</p></div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script
+      src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js'
+    ></script>
+    <!-- Core theme JS-->
+    <script src='js/scripts.js'></script>
+  </body>
+</html>
